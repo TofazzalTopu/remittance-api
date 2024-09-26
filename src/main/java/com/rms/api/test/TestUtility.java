@@ -25,8 +25,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class TestUtility {
 
-    public static void mainn(String[] args) throws IOException {
-        getPath();
+    public static void main(String[] args) throws IOException {
         String str = "504  NORTH SHAHJAHANPUR DHAKA 1217 DGM PRINCIPAL OFFICE  NARAYANGANJ ";
         System.out.println(str.substring(0, 35));
         System.out.println(str.substring(0, 36));
@@ -120,56 +119,6 @@ public class TestUtility {
 
 //        Response response = client.newCall(request).execute();
 //        System.out.println(response);
-    }
-
-    public static void getPath() {
-        String srcPath = "/DEV_BRANCH/PanaceaUpdate/panacea/EFT/Update/pack8/pacs.008.xml";
-
-        // try-catch block to handle exceptions
-        try {
-            // Create a file object
-            File file = new File(srcPath);
-            file = new File(new URI("file:///Users/pankaj/test.txt"));
-            // Get the absolute path of file f
-            String absolute = file.getAbsolutePath();
-            // Display the file path of the file object and also the file path of absolute file
-            System.out.println("Original  path: " + file.getPath());
-            System.out.println("Absolute  path: " + absolute);
-
-            String relativePath = srcPath;
-            Path absolutePath = Paths.get(relativePath).toAbsolutePath();
-            System.out.println("Canonical Path: " + file.getCanonicalPath());
-            System.out.println("Path: " + file.getPath());
-            Path pathAbsolute = Paths.get(srcPath);
-            Path pathBase = Paths.get("/panacea/EFT");
-            Path pathRelative = pathBase.relativize(pathAbsolute);
-            System.out.println("pathRelative: " + pathRelative);
-        } catch (Exception e) {
-            System.err.println("Absolute  path error: " + e.getMessage());
-        }
-    }
-
-    public static void main(String[] args) throws IOException, URISyntaxException {
-        encoder("Bangladesh");
-        encid();
-        String srcPath = "/DEV_BRANCH/PanaceaUpdate/panacea/EFT/Update/pack8/pacs.008.xml";
-        File file = new File(srcPath);
-        printPaths(file);
-        // relative path
-        file = new File("/panacea/EFT/Update/pack8/pacs.008.xml");
-        printPaths(file);
-        // complex relative paths
-        file = new File("/Users/pankaj/../pankaj/test.txt");
-//        printPaths(file);
-        // URI paths
-        file = new File(new URI("file:///panacea/EFT/Update/pack8/pacs.008.xml"));
-        printPaths(file);
-    }
-
-    private static void printPaths(File file) throws IOException {
-        System.out.println("Absolute Path: " + file.getAbsolutePath());
-        System.out.println("Canonical Path: " + file.getCanonicalPath());
-        System.out.println("Path: " + file.getPath());
     }
 
     static void encoder(String password) {
