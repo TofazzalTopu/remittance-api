@@ -29,7 +29,6 @@ public class PasswordUtil {
                 Cipher cipher = getCipher(Cipher.DECRYPT_MODE);
                 byte[] plainBytes = cipher.doFinal(org.apache.commons.codec.binary.Base64.decodeBase64(password));
                 cbsdbpass =  new String(plainBytes);
-                System.setProperty("spring.datasource.password", cbsdbpass);
             }
 
         } catch (Exception e) {
