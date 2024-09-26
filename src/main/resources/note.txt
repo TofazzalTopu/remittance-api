@@ -1,0 +1,77 @@
+Request and Response expected from search API:
+	Request: 
+					bruserid
+					brcode
+					exchcode
+					pinno
+	Response: 
+				PayoutStatus
+				ExchTranId
+				ExchCode
+				OrignCountryName
+				Pinno
+				Reference
+				TranDate
+				FxAmount
+				BenfFirstName
+				RemitterName
+				OriginalCurrency
+				OriginalAmount
+				PayoutStatusDetails
+				TranNo
+
+				
+Request and Response expected from payout API:				
+	Request:
+			ExchCode
+			Pinno
+			BrUserId
+			BrCode
+			NID
+			DOB
+			TranNo
+			Address
+			City
+			ZipCode
+			MobileNo
+			PurposeOfTran
+			RelationWithRemitter
+	
+			BeneIDNumber
+			BeneIDType
+			BeneIDIssuedBy
+			BeneIDIssuedByCountry
+			BeneIDIssuedByState
+			BeneIDIssueDate
+			BeneIDExpirationDate
+			BeneOccupation
+			BeneGender
+			BeneTaxID
+			BeneCustRelationship
+	
+			
+	Response:
+			{"payoutStatus":"null","apiStatus":"INVALID","errorMessage":"Input XML is Invalid. Schema Messages: The 'BeneCurrency' element has an invalid value according to its data type.
+			The 'BeneIDType' element has an invalid value according to its data type.
+			The 'BeneIDIssuedByCountry' element has an invalid value according to its data type.
+			The 'BeneNationality' element has an invalid value according to its data type.
+			The 'BeneDateOfBirth' element has an invalid value according to its data type.
+			The 'BeneOccupation' element has an invalid value according to ","originalResponse":"{
+			  "Response" : {
+				"TransRefID" : "1686534502",
+				"OrderNo" : null,
+				"PIN" : null,
+				"BeneCurrency" : null,
+				"BeneAmount" : null,
+				"PCCommissionCurrency" : null,
+				"PCCommissionAmount" : null,
+				"ResponseDateTimeUTC" : "20211104060755",
+				"ResponseCode" : "5001",
+				"ResponseText" : "Input XML is Invalid. Schema Messages: The 'BeneCurrency' element has an invalid value according to its data type.\r\nThe 'BeneIDType' element has an invalid value according to its data type.\r\nThe 'BeneIDIssuedByCountry' element has an invalid value according to its data type.\r\nThe 'BeneNationality' element has an invalid value according to its data type.\r\nThe 'BeneDateOfBirth' element has an invalid value according to its data type.\r\nThe 'BeneOccupation' element has an invalid value according to "
+			  },
+			  "ErrorMsg" : null
+			}"}
+			
+-------------------------
+
+			
